@@ -15,7 +15,7 @@ async def on_command_error(ctx, error):
 
 @bot.event
 async def on_message(message):
-    m = ""
+    m = "失敗"
     if message.content == "/dice":
         m = "dice"
     # 開始ワード
