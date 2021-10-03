@@ -30,6 +30,10 @@ async def on_message(message):
     elif message.content.startswith('!sleep'):
         await asyncio.sleep(5)
         await bot.send_message(message.channel, 'Done sleeping')
+
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
     
 
 token = getenv('DISCORD_BOT_TOKEN')
