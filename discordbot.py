@@ -1,6 +1,7 @@
 from discord.ext import commands
 from os import getenv
 import traceback
+import random
 
 bot = commands.Bot(command_prefix='/')
 
@@ -22,11 +23,13 @@ async def dice(ctx):
 
 @bot.event
 async def on_message(message):
+    #ちゃんとしたユーザーがメッセージ
     if message.author == bot.user:
         return
-
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
+    #diceから始まる
+    if message.content.startswith('dice'):
+        m = random.randint(1,100)
+        await message.channel.send(m)
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
