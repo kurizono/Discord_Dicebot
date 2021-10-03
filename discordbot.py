@@ -81,6 +81,9 @@ async def on_message(message):
     elif message.content.startswith('test'):
         result = nDn('3d6')
         await message.channel.send(result)
+    else:
+        result = nDn(message)
+        await message.channel.send(result)
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
