@@ -28,15 +28,15 @@ async def on_message(message):
     elif message.content.startswith('!sleep'):
         await bot.send_message(message.channel, 'Done sleeping')
 
-@bot.command()
+@bot.commands()
 async def ping(ctx):
     await ctx.send('pong')
 
-@bot.command()
+@bot.commands()
 async def dice10(ctx):
     await ctx.send('1~10')
 
-@bot.command()
+@bot.commands()
 async def dice100(ctx):
     await ctx.send('1~100')
 
