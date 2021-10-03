@@ -1,6 +1,7 @@
 from discord.ext import commands
 from os import getenv
 import traceback
+from ast import parse
 
 bot = commands.Bot(command_prefix='/')
 
@@ -12,14 +13,19 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 
-@bot.command()
+@client.event
 async def on_message(message):
-    if message.author.bot:
-        return
-    if message.content.startswith("dice"):
-        await message.channel.send("dice")
-    if message.content == '/test':
-        await message.channel.send("aaaa")
+    # 開始ワード
+    if message.content.startswith('dice'):
+        info = parse('dice {}d{} {}', message.content)
+        if info:
+            if info[1].isdecimal() and info[0].isdecimal():
+                dice_num = int(info[0])
+                dice_size = int(info[1])
+                key = info[2]
+                # メッセージを書きます
+                m = message.author.name + ' '
+                await bot.send_message(message.channel, m)
     
 
 
