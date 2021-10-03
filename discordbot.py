@@ -16,10 +16,10 @@ async def on_command_error(ctx, error):
 async def on_message(message):
     if message.author.bot:
         return
-    if message.contentt.startswith("dice"):
+    if message.content.startswith("dice"):
         await message.channel.send("dice")
-    #if message.content == '/test':
-    #    await message.channel.send("aaaa")
+    if message.content == '/test':
+        await message.channel.send("aaaa")
     
 
 
