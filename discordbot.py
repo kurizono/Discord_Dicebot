@@ -20,6 +20,13 @@ async def ping(ctx):
 async def dice(ctx):
     await ctx.send('1~100')
 
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+
+    if message.content.startswith('$hello'):
+        await message.channel.send('Hello!')
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
