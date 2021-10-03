@@ -15,10 +15,8 @@ async def on_command_error(ctx, error):
 
 @bot.event
 async def on_message(message):
-    # 開始ワード
-    if message.content.startswith('dice'):
-        # メッセージが送られてきたチャンネルへメッセージを送ります
-        await bot.send_message(message.channel, "aaaa")
+    if message.author != bot.user:
+        await message.channel.send(message.content)
     
 
 
