@@ -1,8 +1,6 @@
 from discord.ext import commands
 from os import getenv
 import traceback
-from ast import parse
-import asyncio
 
 bot = commands.Bot(command_prefix='/')
 
@@ -28,7 +26,6 @@ async def on_message(message):
 
         await bot.edit_message(tmp, 'You have {} messages.'.format(counter))
     elif message.content.startswith('!sleep'):
-        await asyncio.sleep(5)
         await bot.send_message(message.channel, 'Done sleeping')
 
 @bot.command()
