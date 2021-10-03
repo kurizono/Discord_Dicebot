@@ -82,7 +82,7 @@ async def on_message(message):
         result = nDn('3d6')
         await message.channel.send(result)
     else:
-        result = nDn('1d6')
+        result = nDn(message.content)
         await message.channel.send(result)
 
 token = getenv('DISCORD_BOT_TOKEN')
