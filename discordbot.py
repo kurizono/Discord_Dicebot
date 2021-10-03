@@ -77,10 +77,7 @@ async def on_message(message):
         # m = random.randint(1,100)
         str00 = message.content.split(' ')
         # m = nDn(str00[1])
-        await message.channel.send(str00[0])
-    elif message.content.startswith('test'):
-        result = nDn('3d6')
-        await message.channel.send(result)
+        await message.channel.send(str00[1])
     else:
         result = nDn(message.content)
         await message.channel.send(result)
