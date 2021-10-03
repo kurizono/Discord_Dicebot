@@ -15,14 +15,13 @@ async def on_command_error(ctx, error):
 
 @bot.event
 async def on_message(message):
-    m = "失敗"
     if message.content == "/dice":
         m = "dice"
         # 開始ワード
         if message.content.startswith('dice'):
             # メッセージが送られてきたチャンネルへメッセージを送ります
             m = "aaaa"
-        await bot.send_messeage(message.channel, m)
+        await bot.channel.send(m)
     
     
 
