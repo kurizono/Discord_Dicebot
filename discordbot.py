@@ -32,6 +32,14 @@ async def on_message(message):
 async def ping(ctx):
     await ctx.send('pong')
 
+@bot.command()
+async def dice10(ctx):
+    await ctx.send('1~10')
+
+@bot.command()
+async def dice100(ctx):
+    await ctx.send('1~100')
+
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
