@@ -17,8 +17,11 @@ async def on_message(message):
     if message.author.bot:
         return
 
-    if message.content == '/test':
+    if message.contentt.startswith("dice"):
+        await message.channel.send("dice")
+    elif message.content == '/test':
         await message.channel.send("aaaa")
+    
 
 
 
