@@ -18,11 +18,11 @@ async def on_message(message):
     m = "失敗"
     if message.content == "/dice":
         m = "dice"
-    # 開始ワード
-    elif message.content.startswith('dice'):
-        # メッセージが送られてきたチャンネルへメッセージを送ります
-        m = "aaaa"
-    await bot.send_messeage(message.channel, m)
+        # 開始ワード
+        if message.content.startswith('dice'):
+            # メッセージが送られてきたチャンネルへメッセージを送ります
+            m = "aaaa"
+        await bot.send_messeage(message.channel, m)
     
     
 
