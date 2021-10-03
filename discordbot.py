@@ -76,8 +76,8 @@ async def on_message(message):
     if message.content.startswith('dice'):
         # m = random.randint(1,100)
         str00 = message.content.split(' ')
-        # m = nDn(str00[1])
-        await message.channel.send(str00[1])
+        m = nDn(str00[1])
+        await message.channel.send(m)
     else:
         result = nDn(message.content)
         await message.channel.send(result)
