@@ -36,7 +36,7 @@ async def on_message(message):
         str00 = message.content.split()
         m = nDn(str00[1])
         await message.channel.send(m)
-    else:
+    elif message.content.startswith('test'):
         result = nDn('3d6')
         await message.channel.send(result)
 
