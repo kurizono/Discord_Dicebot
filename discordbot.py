@@ -13,7 +13,7 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 
-@client.event
+@bot.event
 async def on_message(message):
     # 開始ワード
     if message.content.startswith('dice'):
