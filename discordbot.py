@@ -34,6 +34,9 @@ async def on_message(message):
     if message.content.startswith('dice'):
         m = random.randint(1,100)
         await message.channel.send(m)
+    else:
+        result = nDn('3d6')
+        await message.channel.send(result)
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
