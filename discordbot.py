@@ -75,9 +75,9 @@ async def on_message(message):
     #diceから始まる
     if message.content.startswith('dice'):
         # m = random.randint(1,100)
-        str00 = message.content.split()
+        str00 = message.content.split(' ')
         # m = nDn(str00[1])
-        await message.channel.send(str00[1])
+        await message.channel.send(str00[0])
     elif message.content.startswith('test'):
         result = nDn('3d6')
         await message.channel.send(result)
