@@ -17,15 +17,8 @@ async def on_command_error(ctx, error):
 async def on_message(message):
     # 開始ワード
     if message.content.startswith('dice'):
-        info = parse('dice {}d{} {}', message.content)
-        if info:
-            if info[1].isdecimal() and info[0].isdecimal():
-                dice_num = int(info[0])
-                dice_size = int(info[1])
-                key = info[2]
-                # メッセージを書きます
-                m = message.author.name + ' '
-                await bot.send_message(message.channel, m)
+        # メッセージが送られてきたチャンネルへメッセージを送ります
+        await bot.send_message(message.channel, "aaaa")
     
 
 
