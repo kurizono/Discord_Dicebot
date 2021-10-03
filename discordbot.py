@@ -17,10 +17,12 @@ async def on_command_error(ctx, error):
 #    await ctx.send('pong')
 
 async def on_message(message):
-    if message.content == '/dice':
+    if message.content == '/neko':
+        await message.channel.send('にゃーん')
+    elif message.content == '/dice':
         await message.channel.send('diceだよ')
     # 開始ワード
-    if message.content.startswith('dice'):
+    elif message.content.startswith('dice'):
         # メッセージ送信者がBotだった場合は無視する
         if message.author.bot:
             return
